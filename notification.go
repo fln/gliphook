@@ -23,7 +23,7 @@ func (n *Notification) Post(url string) error {
 		return err
 	}
 
-	resp, err := http.DefaultClient.Post(url, "application/json", bytes.NewReader(json))
+	resp, err := http.Post(url, "application/json", bytes.NewReader(json))
 	if err != nil {
 		return err
 	}
